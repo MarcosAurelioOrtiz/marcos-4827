@@ -1,4 +1,5 @@
 import axios from "axios"
+
 import type {
   RecargaData,
   SnailPayResponse
@@ -9,11 +10,13 @@ interface SnailPayRequest extends RecargaData {
   payerEmail: string
 }
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
+
 export const realizarRecarga = async (
   data: SnailPayRequest
 ): Promise<SnailPayResponse> => {
   const response = await axios.post<SnailPayResponse>(
-    "http://localhost:3000/api/snailpay/recarga",
+    `${API_URL}/api/snailpay/recarga`,
     data,
     {
       timeout: 3000
