@@ -30,6 +30,44 @@ El proyecto fue desarrollado con React, TypeScript y Express.
 
 ---
 
+## Aplicación desplegada
+
+La aplicación se encuentra disponible públicamente en:
+
+### Frontend
+
+```text
+https://marcos-4827-frontend.netlify.app
+```
+
+### Backend
+
+```text
+https://marcos-4827-backend.onrender.com
+```
+
+El frontend fue desplegado utilizando **Netlify** y el backend mediante **Render**.
+
+En producción, el frontend utiliza la variable de entorno:
+
+```text
+VITE_API_URL
+```
+
+con el valor:
+
+```text
+https://marcos-4827-backend.onrender.com
+```
+
+para comunicarse con el servicio SnailPay desplegado.
+
+El backend utiliza el puerto proporcionado por el entorno de Render y mantiene el puerto `3000` como valor predeterminado para ejecución local.
+
+> Nota: el backend utiliza el plan gratuito de Render, por lo que después de un periodo de inactividad la primera petición puede tardar algunos segundos mientras el servicio vuelve a iniciar.
+
+---
+
 ## Estructura del proyecto
 
 ```text
@@ -171,6 +209,14 @@ $0.00
 ```
 
 Después del registro se crea una sesión local que permite mantener el acceso al dashboard incluso después de recargar la página.
+
+Debido a que la información de los usuarios se almacena en LocalStorage,
+cada navegador o dispositivo mantiene sus propios datos.
+
+Por ejemplo, un usuario registrado en una computadora no existirá
+automáticamente en otro navegador o dispositivo. Para probar la aplicación
+desde otro entorno es necesario realizar un nuevo registro en ese navegador
+o dispositivo.
 
 ---
 
